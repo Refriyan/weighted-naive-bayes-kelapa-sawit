@@ -1,3 +1,11 @@
 /web_app.rar
+# dataset
 oil_palm/
+web_app/oil_palm/
+
+# virtual env
 .venv/
+
+# cache
+__pycache__/
+*.pyc
