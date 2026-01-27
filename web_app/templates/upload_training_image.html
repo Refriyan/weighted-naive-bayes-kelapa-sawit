@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Training Image</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <h1>Upload Training Image</h1>
+    <form action="/upload_training_image" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <select name="label">
+            <option value="matang">Matang</option>
+            <option value="terlalu_matang">Terlalu Matang</option>
+            <option value="tidak_matang">Tidak Matang</option>
+        </select>
+        <button type="submit">Upload</button>
+    </form>
+    <br>
+    <form action="/retrain" method="post">
+        <button type="submit">Retrain Models</button>
+    </form>
+    <br>
+    <a href="/">Back</a>
+</body>
+</html>

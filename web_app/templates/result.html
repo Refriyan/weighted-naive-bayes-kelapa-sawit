@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="result-container">
+            <h1>Prediction Result</h1>
+            <p>The image is classified as: <strong>{{ result }}</strong></p>
+        </div>
+        <div class="image-container">
+            <h2>Uploaded Image</h2>
+            <img src="{{ url_for('static', filename='uploads/' + file_path) }}" alt="Uploaded Image">
+            <p>Accuracy: {{ accuracy }}%</p>
+        </div>
+        <div class="histogram-container">
+            <h2>Color Histogram</h2>
+            <img src="{{ url_for('static', filename='uploads/' + histogram_path) }}" alt="Color Histogram">
+        </div>
+                <!-- Modal to display enlarged histogram -->
+                <div id="histogramModal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="histogramImg">
+                    <div id="caption"></div>
+                </div>
+        <a href="/" class="back-button">Back</a>
+    </div>
+</body>
+</html>
